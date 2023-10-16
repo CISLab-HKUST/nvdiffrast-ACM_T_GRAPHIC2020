@@ -23,11 +23,18 @@ else:
     print("Specify either --cuda or --opengl")
     exit(1)
 
+# 三角形的三个顶点：(x, y, z, w)
 pos = tensor([[[-0.8, -0.8, 0, 1], [0.8, -0.8, 0, 1], [-0.8, 0.8, 0, 1]]], dtype=torch.float32)
-col = tensor([[[1, 0, 0], [0, 1, 0], [0, 0, 1]]], dtype=torch.float32)
+
+# 三角形的三个顶点对应的标号
 tri = tensor([[0, 1, 2]], dtype=torch.int32)
 
+# 产生的像素点的坐标数组，这里生成了256 * 256个像素点
 rast, _ = dr.rasterize(glctx, pos, tri, resolution=[256, 256])
+
+# 插值时三个顶点对应的RGB权重
+col = tensor([[[1, 0, 0], [0, 1, 0], [0, 0, 1]]], dtype=torch.float32)
+
 out, _ = dr.interpolate(col, rast, tri)
 
 img = out.cpu().numpy()[0, ::-1, :, :] # Flip vertically.

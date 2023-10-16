@@ -1,42 +1,15 @@
-# For CIS_LAB
-## Nvdiffrast（已跑通）
-
-环境：
-```
-- cuda==11.8
-- torch==2.0.1+cu118
-- torchaudio==2.0.2+cu118
-- torchvision==0.15.2+cu118
-- python==3.8
-```
-
-项目配置（会自动生成一个新的conda虚拟环境执行）：
-
-```
-cd nvdiffrast-ACM_T_GRAPHIC2020
-sh run_config.sh
-```
-
-conda环境配置：
-```
-conda activate py3.8_NVDIFFRAST
-```
-
-相关Sample运行
-
-插值三角形，[源码分析博客](https://www.jianshu.com/p/c2252b3afaaf)
-
-```
-python samples/torch/triangle.py --cuda
-```
-
-小方块
-
-```
-python cube.py --resolution 16 --outdir 'mp4'
-```
-
-其他例子待跑
+Metadata-Version: 2.1
+Name: nvdiffrast
+Version: 0.3.1
+Summary: nvdiffrast - modular primitives for high-performance differentiable rendering
+Home-page: https://github.com/NVlabs/nvdiffrast
+Author: Samuli Laine
+Author-email: slaine@nvidia.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
 
 ## Nvdiffrast &ndash; Modular Primitives for High-Performance Differentiable Rendering
 
